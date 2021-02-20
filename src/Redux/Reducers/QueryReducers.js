@@ -5,7 +5,7 @@ const FetchApi = (state = [], action) => {
 
             return action.payload;
         case POST_API:
-            return [...state, action.payload];
+            return [...state, action.payload]
 
         default:
             return state;

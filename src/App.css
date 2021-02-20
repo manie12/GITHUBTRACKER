@@ -1,7 +1,18 @@
 .header{
   background-color: #fcfcfc;
   height: 100%;
-  max-width: 70%;
+  max-width: 100%;
   text-align: center;
   margin: 0% auto;
+}
+form{
+  width: 70%;
+  text-align: center;
+  margin: 0% auto;
+}
+.sign{
+  
+  width: 60%;
+  margin:  7em auto;
+
 }

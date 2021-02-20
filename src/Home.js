@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Repos from './components/Repo/Repos';
 import SearchBar from './components/Search/SearchComp';
+import Auth from './components/Auth/Sign';
 import { Route, Switch } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import Issue from './components/Issues/Issue';
@@ -20,6 +21,9 @@ export default function Home() {
                 <Route exact path='/'>
                     <SearchBar searchIssue={searchIssue} setsearchIssue={setsearchIssue} />
 
+                </Route>
+                <Route exact path='/auth'>
+                    <Auth />
                 </Route>
                 <Route exact path='/repo'>
                     <Repos />

@@ -9,16 +9,17 @@ export const useStyles = makeStyles(theme => ({
     search: {
         width: '100%',
         marginTop: '4em',
-        textAlign: 'center'
+        textAlign: 'center',
+
     },
     ButtonSearch: {
         width: '100%',
-        marginTop: '4em',
+        marginTop: '3em',
         padding: '1em',
 
     },
     svg: {
-        width: '60%',
+        width: '50%',
 
         marginTop: '10em',
         textAlign: 'center'

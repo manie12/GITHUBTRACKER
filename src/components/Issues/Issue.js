@@ -65,8 +65,7 @@ export default function Issue(props) {
 
                                     />
                                     <Button variant="contained" color="primary">
-                                        Search Issue
-                        </Button>
+                                        Search Issue </Button>
 
                                 </Grid>
                                 <Grid item xs={12} sm={3} >
