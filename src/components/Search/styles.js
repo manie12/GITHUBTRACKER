@@ -5,7 +5,9 @@ export const useStyles = makeStyles(theme => ({
         color: '#3d3d3d',
         textAlign: 'center',
         width: '100%',
+        fontSize: "2em"
     },
+
     search: {
         width: '100%',
         marginTop: '4em',

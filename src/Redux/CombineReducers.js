@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
-import FetchApi from './Reducers/QueryReducers';
+import PostUserReducer from './Reducers/userReducer';
 
 export default combineReducers({
+    PostUserReducer
 
-    FetchApi
 })

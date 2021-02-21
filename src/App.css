@@ -7,12 +7,17 @@
 }
 form{
   width: 70%;
+
   text-align: center;
-  margin: 0% auto;
+  margin: 4em auto;
 }
 .sign{
   
-  width: 60%;
+  
   margin:  7em auto;
+
+}
+.signup{
+  width: 80%;
 
 }

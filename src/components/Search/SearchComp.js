@@ -1,45 +1,63 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import { useStyles } from './styles'
-import { Grid } from '@material-ui/core';
+import { Grid, AppBar, Toolbar } from '@material-ui/core';
 import { useHistory, Link } from 'react-router-dom';
 
 
 export default function SearchBar(props) {
+    const [user, setuser] = useState(JSON.parse(localStorage.getItem('profile')));
     const { searchIssue, setsearchIssue } = props
     const classes = useStyles();
     const history = useHistory();
-
+    console.log(user)
     const handleClick = () => {
-
         history.push('/repo');
     }
 
+    useEffect(() => {
+        const token = user?.token
+
+        setuser(JSON.parse(localStorage.getItem('profile')))
+    }, [])
     return (
-        <div className='header'>
+        <div className='header' data-test="headerTest">
             <Grid container justify='center' spacing={2}>
-                <Grid item xs={12} container >
-                    <Grid item xs={12} sm={8} justify="flex-end">
-                        <Typography className={classes.typographyGit} variant="h2" >
-                            Github Issue Tracker
-                 </Typography>
-                    </Grid>
-                    <Grid item sm={6} sm={2}  >
-                        <Button component={Link} to="/auth" variant="contained" color="primary">
-                            SIGN IN
+                <AppBar position="fixed" color="primary">
+                    <Toolbar>
+                        <Grid item xs={12} container >
+                            <Grid item xs={12} sm={8} justify="flex-end">
+                                <Typography className={classes.typographyGit} variant="h2" >
+                                    Github Issue Tracker
+                                </Typography>
+                            </Grid>
+                            <Grid item xs={2}>
+                                {user}
+                            </Grid>
+                            <Grid item sm={6} sm={1}  >
+                                <Button component={Link} to="/auth" variant="contained" color="primary">
+                                    SIGN IN
                         </Button>
 
-                    </Grid>
-                    <Grid itme xs={6} sm={2} >
-                        <Button variant="contained" color="secondary">
-                            LOGOUT
-                        </Button>
+                            </Grid>
+                            <Grid itme xs={6} sm={1} >
+                                {user ? (
+                                    <Button variant="contained" color="secondary">
+                                        LOGOUT
+                                    </Button>
+                                ) : null
 
-                    </Grid>
+                                }
 
-                </Grid>
+
+                            </Grid>
+                        </Grid>
+
+                    </Toolbar>
+                </AppBar>
+
 
 
                 <form >
